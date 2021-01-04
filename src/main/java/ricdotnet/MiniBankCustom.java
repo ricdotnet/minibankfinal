@@ -22,16 +22,18 @@ class MiniBankCustom <Key, Value> extends BankGUI {
     Random rand = new Random();
 
     Calendar date = Calendar.getInstance(); //create a calendar/date object
-
     String print_date = getDate();
     
     double deposit_amount; //sets deposit amount
     double withdraw_amount; //sets wthdrawal amount
      
     private final Client<Key, Value>[] table;   //Array of Entry.
-    private final int capacity = 16;  //Initial capacity of HashMap/array.
-        //can be more but never less due to the size of my account numbers.
-        //hash can be up to 15 if the account number generated is 199999.
+    /**
+     * Initial capacity of HashMap/array.
+     * Can be more but never less due to the size of my account numbers.
+     * Hash can be up to 15 if the account number generated is 199999.
+     */
+    private final int capacity = 16;
     
     //define Client class/constructor for a custom hashmap
     static class Client<Key, Value> {
@@ -306,6 +308,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
     }
 
     //create and register client
+    @Deprecated
     public String registerClient() {
 
         //asks for the clients name. first and last name with a space. then registers both. each with a seperated input
@@ -351,6 +354,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
 
     } //end register client method
     //client name getter
+    @Deprecated
     public String askClientName() {
 
         //String client_first_name;
@@ -369,6 +373,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
         return client_name;
     }
     //client age getter
+    @Deprecated
     public int askClientAge() {
 
         boolean ageSet = false;
@@ -399,6 +404,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
             return client_age;
     }
     //client city getter
+    @Deprecated
     public String askClientAddress() {
         
         System.out.print("Enter your Address: ");
@@ -409,6 +415,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
         return client_address;
     }
     //client starting balance getter
+    @Deprecated
     public double askClientStartingBalance() {
         
         System.out.print("Enter a starting balance: £");
@@ -446,6 +453,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
     }
 
     //method to deposit money into an account
+    @Deprecated
     public void makeDeposit(Key selected_account) {
 
         boolean value_ok = false; //value_ok variable is set to true if the value entered is accepted. accepted values are > 0;
@@ -485,6 +493,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
 
 
     //make withdrawal
+    @Deprecated
     public void makeWithdrawal(int selected_account) {
 
         boolean value_ok = false;

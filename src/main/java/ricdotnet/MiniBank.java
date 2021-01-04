@@ -21,9 +21,6 @@ public class MiniBank extends BankGUI {
     double deposit_amount; //sets deposit amount
     double withdraw_amount; //sets wthdrawal amount
 
-    //HashMap<Integer, Clients> client = new HashMap<Integer, Clients>();
-    //ArrayList<Transaction> transactions; //call transaction class
-
     /**
      * Using an HashMap for the transactions will help keep many transactions linked to 1 account
      * Same result could be achieved with ArrayList with 3 values setting:
@@ -39,6 +36,7 @@ public class MiniBank extends BankGUI {
     }
 
     //create and register client
+    @Deprecated
     public String registerClient() {
 
         //asks for the clients name. first and last name with a space. then registers both. each with a seperated input
@@ -84,6 +82,7 @@ public class MiniBank extends BankGUI {
 
     } //end register client method
     //client name getter
+    @Deprecated
     public String askClientName() {
 
         //String client_first_name;
@@ -102,6 +101,7 @@ public class MiniBank extends BankGUI {
         return client_name;
     }
     //client age getter
+    @Deprecated
     public int askClientAge() {
 
         boolean ageSet = false;
@@ -132,6 +132,7 @@ public class MiniBank extends BankGUI {
             return client_age;
     }
     //client city getter
+    @Deprecated
     public String askClientAddress() {
         
         System.out.print("Enter your Address: ");
@@ -142,6 +143,7 @@ public class MiniBank extends BankGUI {
         return client_address;
     }
     //client starting balance getter
+    @Deprecated
     public double askClientStartingBalance() {
         
         System.out.print("Enter a starting balance: £");
@@ -192,6 +194,7 @@ public class MiniBank extends BankGUI {
     }
 
     //method to deposit money into an account for terminal use
+    @Deprecated
     public void makeDeposit(int selected_account) {
 
         boolean value_ok = false; //value_ok variable is set to true if the value entered is accepted. accepted values are > 0;
@@ -230,6 +233,7 @@ public class MiniBank extends BankGUI {
     }
 
     //make withdrawal for terminal use
+    @Deprecated
     public void makeWithdrawal(int selected_account) {
 
         boolean value_ok = false;
