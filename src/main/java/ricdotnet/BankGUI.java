@@ -30,9 +30,9 @@ public class BankGUI extends javax.swing.JFrame {
      * First 2 lines is for java libraries
      * 3rd line is for custom hash map
      */
-    static HashMap<Integer, Clients> client = new HashMap<Integer, Clients>();
-    static MiniBank bank = new MiniBank(); //create object from MiniBank class
-    //static MiniBankCustom<Integer, Clients> bank = new MiniBankCustom<Integer, Clients>();
+    //static HashMap<Integer, Clients> client = new HashMap<Integer, Clients>();
+    //static MiniBank bank = new MiniBank(); //create object from MiniBank class
+    static MiniBankCustom<Integer, Clients> bank = new MiniBankCustom<Integer, Clients>();
     
     //this arraylist will always exist because it stores transactions
     static ArrayList<Transaction> transactions; //call transaction class
@@ -935,8 +935,8 @@ public class BankGUI extends javax.swing.JFrame {
         }
         
             Clients customer = new Clients(client_name, client_address, client_age, bank.print_date, account_balance, account_status, transactions);
-            //bank.put(account_number, customer);
-            client.put(account_number, customer);
+            bank.put(account_number, customer);
+            //client.put(account_number, customer);
         
             //only set a first deposit if the starting balance is more than 0
             if(account_balance > 0) {
@@ -1057,7 +1057,6 @@ public class BankGUI extends javax.swing.JFrame {
   
         
         String delete_confirm = JOptionPane.showInputDialog(SelectedAccount, "Please write 'delete this account' on the text box.");
-        SelectedAccount.setVisible(false);
         
         //JOptionPane.showMessageDialog(SelectedAccount, delete_confirm);
         
