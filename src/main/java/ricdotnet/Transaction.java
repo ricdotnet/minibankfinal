@@ -36,7 +36,7 @@ public class Transaction implements Comparable<Transaction> {
     }
 
     /**
-     *
+     * To be used on custom sorting algorithm.
      * @return
      */
     public double getTransactionAmount() {

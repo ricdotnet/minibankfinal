@@ -87,6 +87,7 @@ public class Clients {
      * @param deposit_amount
      * @param transaction_date
      */
+    @Deprecated
     public void setFirstDeposit(double deposit_amount, String transaction_date) {
          //add transaction on the list to be sorted
          // Transaction new_transaction_sorted = new Transaction(account_number, deposit_amount, "Deposit...");
@@ -285,6 +286,7 @@ public class Clients {
      * 
      * @return
     */
+    @Deprecated
     public String accounts() {
         return client_name + " :: " + client_age + " :: " + client_address + " :: " + open_date + " :: £" + account_balance + " :: " + account_status + "\n";
     }

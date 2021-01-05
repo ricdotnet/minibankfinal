@@ -30,9 +30,9 @@ public class BankGUI extends javax.swing.JFrame {
      * First 2 lines is for java libraries
      * 3rd line is for custom hash map
      */
-    //static HashMap<Integer, Clients> client = new HashMap<Integer, Clients>();
-    //static MiniBank bank = new MiniBank(); //create object from MiniBank class
-    static MiniBankCustom<Integer, Clients> bank = new MiniBankCustom<Integer, Clients>();
+    static HashMap<Integer, Clients> client = new HashMap<Integer, Clients>();
+    static MiniBank bank = new MiniBank(); //create object from MiniBank class
+    //static MiniBankCustom<Integer, Clients> bank = new MiniBankCustom<Integer, Clients>();
     
     //this arraylist will always exist because it stores transactions
     static ArrayList<Transaction> transactions; //call transaction class
@@ -47,9 +47,9 @@ public class BankGUI extends javax.swing.JFrame {
     
 
     //online variable for while loops
-    static boolean program_on = true; //when true keeps the user on the main menu - if set to false quits the program
-    static boolean on_account_menu = true; //when true keeps the user on account menu. when set to false goes back to main menu
-    static int option;
+    @Deprecated static boolean program_on = true; //when true keeps the user on the main menu - if set to false quits the program
+    @Deprecated static boolean on_account_menu = true; //when true keeps the user on account menu. when set to false goes back to main menu
+    @Deprecated static int option;
 
     //variables for menu option
     static int account_option; //variable for account menu selection
@@ -935,8 +935,8 @@ public class BankGUI extends javax.swing.JFrame {
         }
         
             Clients customer = new Clients(client_name, client_address, client_age, bank.print_date, account_balance, account_status, transactions);
-            bank.put(account_number, customer);
-            //client.put(account_number, customer);
+            //bank.put(account_number, customer);
+            client.put(account_number, customer);
         
             //only set a first deposit if the starting balance is more than 0
             if(account_balance > 0) {
@@ -1022,7 +1022,7 @@ public class BankGUI extends javax.swing.JFrame {
         SelectAnAccountTextList.setText(bank.printAccountNumbers());
         SelectAnAccountAddAccountButton.setVisible(false);
         
-        if(bank.checkForAccounts() == 16) {
+        if("There are no bank accounts in the system.".equals(bank.existingAccounts())) {
             SelectAnAccountNumberInput.setEnabled(false);
             SelectAnAccountAddAccountButton.setVisible(true);
         }
@@ -1072,7 +1072,7 @@ public class BankGUI extends javax.swing.JFrame {
             //Update select an account window if it is open
             SelectAnAccountTextList.setText(bank.printAccountNumbers());
             //SelectAnAccountAddAccountButton.setVisible(false);
-            if(bank.checkForAccounts() == 16) {
+            if("There are no bank accounts in the system.".equals(bank.existingAccounts())) {
                 SelectAnAccountNumberInput.setEnabled(false);
                 SelectAnAccountAddAccountButton.setVisible(true);
             }

@@ -387,7 +387,7 @@ public class MiniBank extends BankGUI {
         String result = "";
         if(client.isEmpty()){
             //System.out.println("You have no bank accounts.");
-            return "There are no bank accounts.";
+            return "There are no bank accounts in the system.";
         }else{
             for(Integer i:client.keySet()){
                 //System.out.print(i + " :: " + client.get(i));
@@ -404,7 +404,7 @@ public class MiniBank extends BankGUI {
         String result = "";
         if(client.isEmpty()){
             //System.out.println("You have no bank accounts.");
-            return "There are no bank accounts.";
+            return "There are no bank accounts in the system.";
         }else{
             for(Integer i:client.keySet()){
                 

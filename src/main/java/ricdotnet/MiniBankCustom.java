@@ -197,7 +197,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
          */
         if(checkForAccounts() == 16) {
             //System.out.println("There are no accounts in the system.\n");
-            return "There are no accounts in the system.\n";
+            return "There are no bank accounts in the system.";
         }
       
         String result = ""; //empty string to append all accounts. 1 by 1
@@ -230,7 +230,7 @@ class MiniBankCustom <Key, Value> extends BankGUI {
         
         if(checkForAccounts() == 16) {
             //System.out.println("There are no accounts in the system.\n");
-            return "There are no accounts in the system.\n";
+            return "There are no bank accounts in the system.";
         }
         String result = "";
         for(int i = 0; i < capacity; i++){
